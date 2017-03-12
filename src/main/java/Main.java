@@ -1,5 +1,7 @@
 
 
+import com.mazurekb.Factory.Animal;
+import com.mazurekb.Factory.AnimalFactory;
 import com.mazurekb.NullObject.AbstractUser;
 import com.mazurekb.NullObject.UserFactory;
 import com.mazurekb.builder.ComputerSetup;
@@ -27,6 +29,8 @@ public class Main {
 		System.out.println(user4.getName());
 		System.out.println(user5.getName());
 		
+		
+		System.out.println();		
 		/**********************************************************************/
 		
 		/*
@@ -41,10 +45,33 @@ public class Main {
 		forGames.showComponents();
 		System.out.println("Total cost: " + forGames.getCost());
 		
+		System.out.println();
+		
 		ComputerSetup forWork = setupBuilder.forWork();
 		System.out.println("Setup for work: ");
 		forWork.showComponents();
 		System.out.println("Total cost: " + forWork.getCost());
+		
+		
+		System.out.println();
+		/**********************************************************************/
+		
+		/*
+		 * Pattern: Factory
+		 * 
+		 */
+		
+		AnimalFactory animalFactory = new AnimalFactory();
+		
+		Animal animal1 = animalFactory.getAnimal("Dog");
+		animal1.makeSound();
+		
+		Animal animal2 = animalFactory.getAnimal("Cat");
+		animal2.makeSound();
+		
+		Animal animal3 = animalFactory.getAnimal("Cow");
+		animal3.makeSound();
+		
 	}
 
 }
