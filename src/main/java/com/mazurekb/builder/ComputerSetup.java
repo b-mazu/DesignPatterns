@@ -1,4 +1,4 @@
-package com.mazurekb.builder;
+package com.mazurekb.Builder;
 
 import java.util.ArrayList;
 import java.util.List;

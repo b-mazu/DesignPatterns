@@ -1,4 +1,4 @@
-package com.mazurekb.builder;
+package com.mazurekb.Builder;
 
 public class AmdCPU extends CPU{
 

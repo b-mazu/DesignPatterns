@@ -1,11 +1,15 @@
 
 
+import com.mazurekb.AbstractFactory.AbstractFactory;
+import com.mazurekb.AbstractFactory.FactoryProducer;
+import com.mazurekb.AbstractFactory.Profession;
+import com.mazurekb.AbstractFactory.Student;
+import com.mazurekb.Builder.ComputerSetup;
+import com.mazurekb.Builder.ComputerSetupBuilder;
 import com.mazurekb.Factory.Animal;
 import com.mazurekb.Factory.AnimalFactory;
 import com.mazurekb.NullObject.AbstractUser;
 import com.mazurekb.NullObject.UserFactory;
-import com.mazurekb.builder.ComputerSetup;
-import com.mazurekb.builder.ComputerSetupBuilder;
 
 public class Main {
 
@@ -71,6 +75,38 @@ public class Main {
 		
 		Animal animal3 = animalFactory.getAnimal("Cow");
 		animal3.makeSound();
+		
+		
+		System.out.println();
+		/**********************************************************************/
+		
+		/*
+		 * Pattern: Abstract Factory
+		 * 
+		 */
+		
+		AbstractFactory professionFactory = FactoryProducer.getFactory("PROFESSION");
+		
+		Profession profession1 = professionFactory.getProfession("LAWYER");
+		profession1.isDoing();
+		
+		Profession profession2 = professionFactory.getProfession("DOCTOR");
+		profession2.isDoing();
+		
+		Profession profession3 = professionFactory.getProfession("TEACHER");
+		profession3.isDoing();
+		
+		AbstractFactory studentFactory = FactoryProducer.getFactory("STUDENT");
+		
+		Student student1 = studentFactory.getStudent("LAW");
+		student1.study();
+		
+		Student student2 = studentFactory.getStudent("MATH");
+		student2.study();
+		
+		Student student3 = studentFactory.getStudent("COMPUTERSCIENCE");
+		student3.study();
+		
 		
 	}
 
