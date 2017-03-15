@@ -10,6 +10,10 @@ import com.mazurekb.Factory.Animal;
 import com.mazurekb.Factory.AnimalFactory;
 import com.mazurekb.NullObject.AbstractUser;
 import com.mazurekb.NullObject.UserFactory;
+import com.mazurekb.Strategy.Call;
+import com.mazurekb.Strategy.Context;
+import com.mazurekb.Strategy.MMS;
+import com.mazurekb.Strategy.SMS;
 
 public class Main {
 
@@ -106,6 +110,24 @@ public class Main {
 		
 		Student student3 = studentFactory.getStudent("COMPUTERSCIENCE");
 		student3.study();
+		
+		
+		
+		System.out.println();
+		/**********************************************************************/
+		
+		/*
+		 * Pattern: Abstract Factory
+		 * 
+		 */
+		Context context = new Context(new SMS());
+		System.out.println("Cost of sending 4 SMS: " + context.executePrice(4));
+		
+		context = new Context(new MMS());
+		System.out.println("Cost of sending 13 MMS: " + context.executePrice(13));
+		
+		context = new Context(new Call());
+		System.out.println("Cost of 34 sec call: " + context.executePrice(34));
 		
 		
 	}
