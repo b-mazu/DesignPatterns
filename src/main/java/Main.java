@@ -117,7 +117,7 @@ public class Main {
 		/**********************************************************************/
 		
 		/*
-		 * Pattern: Abstract Factory
+		 * Pattern: Strategy
 		 * 
 		 */
 		Context context = new Context(new SMS());
